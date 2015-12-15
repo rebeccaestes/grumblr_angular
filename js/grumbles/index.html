@@ -1,0 +1,6 @@
+<h2>I'm the Grumbles index!</h2>
+<div data-ng-repeat="grumble in GrumbleIndexViewModel.grumbles">
+  <p><a data-ui-sref="grumbleShow({id: $index})">{{grumble.title}}</a></p>
+</div>
+
+<a data-ui-sref="grumbleNew()">Create New</a>

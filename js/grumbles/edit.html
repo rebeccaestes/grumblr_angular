@@ -1,0 +1,18 @@
+<h2>Grumblr edit page</h2>
+<h3>Edit {{GrumbleEditViewModel.grumble.title}}</h3>
+
+
+
+<form ng-submit="GrumbleEditViewModel.edit($index)">
+
+    <label>Title</label>
+    <input id="title" type="text" name="title" ng-model="this.title">
+
+    <label>Content</label>
+    <input id="content" type="text" name="content" ng-model="this.content">
+
+    <input type="submit" ng-click="grumbleShow({id: GrumbleEditViewModel.index})">
+
+</form>
+
+    <button ng-click="GrumbleEditViewModel.delete(GrumbleEditViewModel.index)">Delete Me</button>
