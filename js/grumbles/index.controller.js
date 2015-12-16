@@ -9,9 +9,14 @@
 
   function GrumbleIndexControllerFunction(){
     this.grumbles = grumbles;
-    this.delete = function(id){
-    	grumbles.splice(id, 1);
-    }
+    this.create = function(){
+      grumbles.unshift({
+        title: this.newGrumble.title
+      });
+    };
+    this.delete = function(index){
+      grumbles.splice(index, 1);
+    };
   }
 
 })();

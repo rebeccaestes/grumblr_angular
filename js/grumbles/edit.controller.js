@@ -17,7 +17,7 @@
     this.index = $stateParams.id;
     this.delete = function(index){
       grumbles.splice(index, 1);
-    }
+    };
   };
 
 })();
