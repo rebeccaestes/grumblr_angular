@@ -17,9 +17,17 @@
         this.grumble.title = title.value;
         $("#title").val("");
       };
+      if (authorName.value) { 
+        this.grumble.authorName = authorName.value;
+        $("#authorName").val("");
+      };
       if (content.value) { 
         this.grumble.content = content.value;
         $("#content").val("");
+      };
+      if (photoUrl.value) { 
+        this.grumble.photoUrl = photoUrl.value;
+        $("#photoUrl").val("");
       }
     };
     // this.index = $stateParams.id;

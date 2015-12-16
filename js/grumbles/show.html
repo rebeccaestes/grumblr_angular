@@ -1,16 +1,28 @@
 <h2>I'm the Grumbles show page!!!</h2>
 <h3>{{GrumbleShowViewModel.grumble.title}}</h3>
-<p>{{GrumbleShowViewModel.grumble.content}}</p>
+<p><em>a grumble from {{GrumbleShowViewModel.grumble.authorName}}</em></p>
+<img ng-src="{{GrumbleShowViewModel.grumble.photoUrl}}">
+<blockquote>{{GrumbleShowViewModel.grumble.content}}</blockquote>
 
-Edit Me:
-<form ng-submit="GrumbleShowViewModel.edit($index)" id="editForm">
+<button ng-click="editForm = !editForm">Edit Me</button>
+<div ng-show="editForm">
 
-    <label>Title</label>
-    <input id="title" type="text" name="title" ng-model="this.title">
+	<form ng-submit="GrumbleShowViewModel.edit($index)" id="editForm">
 
-    <label>Content</label>
-    <input id="content" type="text" name="content" ng-model="this.content">
+	    <label>Title: </label>
+	    <input id="title" type="text" name="title" ng-model="this.title">
 
-    <input type="submit" ng-click="grumbleShow({id: $index})">
+	    <label>Author Name: </label>
+	    <input id="authorName" type="text" name="authorName" ng-model="this.authorName">
 
-</form>
+	    <label>Grumble Content: </label>
+	    <input id="content" type="text" name="content" ng-model="this.content">
+
+	    <label>Photo URL: </label>
+	    <input id="photoUrl" type="text" name="photoUrl" ng-model="this.photoUrl">
+
+	    <input type="submit" ng-click="grumbleShow({id: $index}); editForm =! editForm">
+
+	</form>
+
+</div>

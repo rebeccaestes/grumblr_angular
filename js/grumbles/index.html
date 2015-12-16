@@ -8,7 +8,19 @@
 </div>
 
 
-<div>
-  <button data-ng-click="GrumbleIndexViewModel.create()">Create New</button>
-  <input data-ng-model="GrumbleIndexViewModel.newGrumble.title" />
+<button ng-click="createForm = !createForm">Create New</button>
+
+<div ng-show="createForm">
+
+  <form ng-submit="GrumbleIndexViewModel.create()">
+
+  <label>Title: </label><input data-ng-model="GrumbleIndexViewModel.newGrumble.title" />
+
+  <label>Author Name </label><input data-ng-model="GrumbleIndexViewModel.newGrumble.authorName" />
+
+  <label>Grumble Content: </label><input data-ng-model="GrumbleIndexViewModel.newGrumble.content" />
+
+  <label>Photo URL: </label><input data-ng-model="GrumbleIndexViewModel.newGrumble.photoUrl" />
+
+   <input type="submit" ng-click="createForm =! createForm">
 </div>
